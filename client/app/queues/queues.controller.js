@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('rachaApp')
-  .controller('QueuesCtrl', function ($scope, $http, socket) {
+  .controller('QueuesCtrl', function ($scope, $http, socket, $location) {
     $scope.awesomeThings = [];
 
     $http.get('/api/things').success(function(awesomeThings) {
@@ -40,4 +40,8 @@ angular.module('rachaApp')
         notes: "I'll be in your neighborhood doing errands."
       });
     }
+
+    $scope.go = function ( path ) {
+      $location.path( path );
+    };
   });
