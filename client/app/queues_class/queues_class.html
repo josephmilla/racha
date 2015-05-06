@@ -4,7 +4,7 @@
     <!-- <h2>Queued up for:</h2> -->
     <div layout="row" flex>
       <md-subheader class="md-primary">
-        <h4>QUEUES</h4>
+        <h4>CLASS</h4>
       </md-subheader>
       <span flex></span>
       <md-button class="md-fab md-mini md-primary" aria-label="Navigation" ng-click="getLocation()" style="margin-top: 15px;">
@@ -15,8 +15,7 @@
       <md-list-item class="md-3-line" ng-repeat="item in todos">
         <img ng-src="{{item.face}}" alt="{{item.who}}" class="md-avatar">
         <div class="md-list-item-text">
-          <h3>{{item.what}}</h3>
-          <h4>{{item.who}}</h4>
+          <h3>{{item.who}}</h3>
           <p>
             {{item.notes}}
           </p>
