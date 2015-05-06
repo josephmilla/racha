@@ -13,6 +13,7 @@
     letter-spacing: -1px;
 }
 
+
 .hero-unit {
     position: relative;
     padding: 30px 15px;
@@ -65,5 +66,5 @@ div {
 .cell {
   border: #E3B38A 1.5px solid;  
   background-color: #E7CAB1;
-  color: #E7CAB1;
+  color: #FFFFFF;
 }
