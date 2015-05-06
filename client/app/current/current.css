@@ -4,3 +4,9 @@
   border-radius: 48px;
   border: 1px solid #ddd;
 }
+
+.cell {
+  background-color: #E7CAB1;
+  color: #E7CAB1;
+  border: 10px;
+}

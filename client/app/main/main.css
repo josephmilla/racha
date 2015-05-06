@@ -61,7 +61,9 @@ div {
   background-color: #E7CAB1;
 }
 
-.md-hue-1 {
-  background-color: #E7CAB1;
-}
 
+.cell {
+  border: #E3B38A 1.5px solid;  
+  background-color: #E7CAB1;
+  color: #E7CAB1;
+}
