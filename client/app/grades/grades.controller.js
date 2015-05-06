@@ -37,7 +37,7 @@ angular.module('rachaApp')
     var grades = ['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'D+', 'D', 'D-', 'F'];
 
     $scope.class_list = [];
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 10; i++) {
       var size = Math.floor((Math.random() * 30) + 5);
 
       $scope.class_list.push({
