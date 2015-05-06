@@ -35,3 +35,33 @@
   border-radius: 48px;
   border: 1px solid #ddd;
 }
+
+c {
+  background-color: #E7CAB1;
+  color: #E7CAB1;
+  border: none;
+}
+
+
+h1 {
+    font-size: 60px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+
+
+label {
+    font-size: 1px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+div {
+  background-color: #E7CAB1;
+}
+
+.md-hue-1 {
+  background-color: #E7CAB1;
+}
+
