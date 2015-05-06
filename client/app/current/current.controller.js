@@ -66,7 +66,7 @@ angular.module('rachaApp')
       for (var i = 0; i < 15; i++) {
         $scope.todos.push({
           face: data.results[i].user.picture.thumbnail,
-          what: classes[i],
+          what: classes[Math.floor((Math.random() * 15) + 0)],
           who: data.results[i].user.name.first.capitalizeFirstLetter()  + " " + data.results[i].user.name.last.capitalizeFirstLetter(),
           notes: Math.floor((Math.random() * 20) + 1) + " minutes, " + Math.floor((Math.random() * 12) + 1) + ":" + fixNumber(Math.floor((Math.random() * 60) + 1)) + " PM"
         });
