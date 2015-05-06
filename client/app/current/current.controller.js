@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('rachaApp')
-  .controller('CurrentCtrl', function ($scope, $http, socket) {
+  .controller('CurrentCtrl', function ($scope, $http, socket, $mdDialog) {
     $scope.awesomeThings = [];
 
     $http.get('/api/things').success(function(awesomeThings) {
@@ -24,6 +24,23 @@ angular.module('rachaApp')
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('thing');
     });
+
+    $scope.alert = '';
+    $scope.getLocation = function(ev) {
+      // Appending dialog to document.body to cover sidenav in docs app
+      var confirm = $mdDialog.confirm()
+        .parent(angular.element(document.body))
+        .title('Enter Location')
+        .content('Location:')
+        .ariaLabel('Lucky day')
+        .ok('OK')
+        .targetEvent(ev);
+      $mdDialog.show(confirm).then(function() {
+        $scope.alert = 'You decided to get rid of your debt.';
+      }, function() {
+        $scope.alert = 'You decided to keep your debt.';
+      });
+    };
 
     var item = {
       face: '/img/list/60.jpeg',
