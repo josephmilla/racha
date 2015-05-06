@@ -31,13 +31,18 @@ angular.module('rachaApp')
       who: 'Min Li Chan',
       notes: "I'll be in your neighborhood doing errands."
     };
-    $scope.todos = [];
-    for (var i = 0; i < 15; i++) {
-      $scope.todos.push({
+
+    var classes = ['BADM 451', 'BADM 458', 'CS 125', 'CS 173', 'CWL 251', 'ACCY 200', 'ASTR 121', 'BADM 351', 'BUS 101', 'BUS 199', 'BTW 250', 'MATH 220', 'RHET 105', 'SOC 267', 'CS 465'];
+
+    $scope.class_list = [];
+    for (var i = 0; i < 5; i++) {
+      var size = Math.floor((Math.random() * 30) + 5);
+
+      $scope.class_list.push({
         face: '/img/list/60.jpeg',
-        what: "Brunch this weekend?",
+        what: classes[Math.floor((Math.random() * 15) + 0)],
         who: "Min Li Chan",
-        notes: "I'll be in your neighborhood doing errands."
+        notes: Math.floor((Math.random() * size) + 0) + "/" + size
       });
     }
 
