@@ -68,3 +68,12 @@ div {
   background-color: #E7CAB1;
   color: #FFFFFF;
 }
+
+
+.mycolor1 {
+  outline-color: #E7CAB1; 
+  background-color: #E7CAB1;
+  border-color: #E7CAB1;   
+}
+
+
