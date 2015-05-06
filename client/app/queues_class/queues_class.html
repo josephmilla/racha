@@ -1,1 +1,32 @@
 <div ng-include="'components/navbarclass/navbarclass.html'"></div>
+<div ng-controller="QueuesClassCtrl" layout="column" layout-fill>
+  <md-content layout-padding>
+    <!-- <h2>Queued up for:</h2> -->
+    <div layout="row" flex>
+      <md-subheader class="md-primary">
+        <h4>QUEUES</h4>
+      </md-subheader>
+      <span flex></span>
+      <md-button class="md-fab md-mini md-primary" aria-label="Navigation" ng-click="getLocation()" style="margin-top: 15px;">
+        <span class="glyphicon glyphicon-map-marker"></span>
+      </md-button>
+    </div>
+    <md-list>
+      <md-list-item class="md-3-line" ng-repeat="item in todos">
+        <img ng-src="{{item.face}}" alt="{{item.who}}" class="md-avatar">
+        <div class="md-list-item-text">
+          <h3>{{item.what}}</h3>
+          <h4>{{item.who}}</h4>
+          <p>
+            {{item.notes}}
+          </p>
+        </div>
+        <span flex></span>
+        <md-button class="md-fab md-mini md-primary" aria-label="Navigation" style="margin-top: 15px;">
+          <md-icon md-svg-icon="md-close"></md-icon>
+        </md-button>
+        <md-divider inset></md-divider>
+      </md-list-item>
+    </md-list>
+  </md-content>
+</div>
