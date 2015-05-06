@@ -30,18 +30,48 @@ angular.module('rachaApp')
     };
 
     $scope.alert = '';
-    $scope.showAdvanced = function(ev) {
-      $mdDialog.show({
-        controller: DialogController,
-        templateUrl: 'dialog1.tmpl.html',
-        targetEvent: ev,
-      })
-      .then(function(answer) {
-        $scope.alert = 'You said the information was "' + answer + '".';
+    $scope.showConfirm = function(ev) {
+      // Appending dialog to document.body to cover sidenav in docs app
+      var confirm = $mdDialog.confirm()
+        .parent(angular.element(document.body))
+        .title('Forgot your password?')
+        .content('Reset it at passwords.cites.illinois.edu')
+        .ariaLabel('Lucky day')
+        .ok('OK')
+        .targetEvent(ev);
+      $mdDialog.show(confirm).then(function() {
+        $scope.alert = 'You decided to get rid of your debt.';
       }, function() {
-        $scope.alert = 'You cancelled the dialog.';
+        $scope.alert = 'You decided to keep your debt.';
       });
     };
+    $scope.signUp = function(ev) {
+      // Appending dialog to document.body to cover sidenav in docs app
+      var confirm = $mdDialog.confirm()
+        .parent(angular.element(document.body))
+        .title('Forgot your password?')
+        .content('Reset it at passwords.cites.illinois.edu')
+        .ariaLabel('Lucky day')
+        .ok('OK')
+        .targetEvent(ev);
+      $mdDialog.show(confirm).then(function() {
+        $scope.alert = 'You decided to get rid of your debt.';
+      }, function() {
+        $scope.alert = 'You decided to keep your debt.';
+      });
+    };
+    // $scope.signUp = function(ev) {
+    //   $mdDialog.show({
+    //     controller: DialogController,
+    //     templateUrl: 'dialog1.tmpl.html',
+    //     targetEvent: ev,
+    //   })
+    //   .then(function(answer) {
+    //     $scope.alert = 'You said the information was "' + answer + '".';
+    //   }, function() {
+    //     $scope.alert = 'You cancelled the dialog.';
+    //   });
+    // };
   });
 
   function DialogController($scope, $mdDialog) {

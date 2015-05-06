@@ -26,8 +26,15 @@
   </section>
 </div> -->
 
-
 <div ng-app="rachaApp" ng-controller="MainCtrl">
+  <md-toolbar md-scroll-shrink>
+    <div class="md-toolbar-tools">
+      <span flex></span>
+      <md-button class="md-icon-button" aria-label="Navigation" ng-click="showConfirm($event)">
+        <span class="glyphicon glyphicon-question-sign"></span>
+      </md-button>
+    </div>
+  </md-toolbar>
   <div layout="row" layout-align="center center">
     <md-content layout-padding flex="33" flex-sm="100">
       <br>
@@ -38,18 +45,18 @@
       <section flex>
         <md-input-container>
           <!-- Use floating label instead of placeholder -->
-          <label>Name</label>
+          <label>NetID</label>
           <input ng-model="user.name" type="text">
         </md-input-container>
         <md-input-container>
           <!-- Use floating label instead of placeholder -->
-          <label>Email</label>
-          <input ng-model="user.email" type="email">
+          <label>AD Password</label>
+          <input ng-model="user.password" type="password">
         </md-input-container>
       </section>
 
       <section layout="row" layout-sm="row" layout-align="center center">
-        <md-button class="md-raised md-primary">Sign up</md-button>
+        <!-- <md-button class="md-raised md-primary" ng-click="signUp($event)">Sign up</md-button> -->
         <md-button class="md-raised md-primary" ng-click="go('\current')">Login</md-button>
       </section>
     </md-content>
