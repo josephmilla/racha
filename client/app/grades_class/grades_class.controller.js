@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('rachaApp')
-  .controller('ClassCtrl', function ($scope) {
+  .controller('GradesClassCtrl', function ($scope) {
     $scope.message = 'Hello';
   });

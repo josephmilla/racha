@@ -1,16 +1,16 @@
 'use strict';
 
-describe('Controller: ClassCtrl', function () {
+describe('Controller: GradesClassCtrl', function () {
 
   // load the controller's module
   beforeEach(module('rachaApp'));
 
-  var ClassCtrl, scope;
+  var GradesClassCtrl, scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    ClassCtrl = $controller('ClassCtrl', {
+    GradesClassCtrl = $controller('GradesClassCtrl', {
       $scope: scope
     });
   }));
