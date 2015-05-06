@@ -1,6 +1,6 @@
 <div ng-include="'components/navbarclass/navbarclass.html'"></div>
 <div ng-controller="QueuesClassCtrl" layout="column" layout-fill>
-  <md-content layout-padding>
+  <md-content class="md-hue-1" layout-padding>
     <!-- <h2>Queued up for:</h2> -->
     <div layout="row" flex>
       <md-subheader class="md-primary">
@@ -12,7 +12,7 @@
       </md-button>
     </div>
     <md-list>
-      <md-list-item class="md-3-line" ng-repeat="item in todos">
+      <md-list-item class="md-3-line cell" ng-repeat="item in todos">
         <img ng-src="{{item.face}}" alt="{{item.who}}" class="md-avatar">
         <div class="md-list-item-text">
           <h3>{{item.who}}</h3>
