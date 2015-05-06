@@ -45,15 +45,15 @@
   </md-toolbar>
   <section layout="row" flex>
     <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
-      <md-toolbar ng-controller="RightCtrl" class="md-theme-light">
-        <h1 class="md-toolbar-tools">
-          <md-button class="md-icon-button" aria-label="Navigation" ng-click="close()">
+      <md-toolbar ng-controller="RightCtrl" class="md-theme-light cell">
+        <h1 class="md-toolbar-tools cell">
+          <md-button class="md-icon-button cell" aria-label="Navigation" ng-click="close()">
             <span class="glyphicon glyphicon-menu-hamburger"></span>
           </md-button>
           Navigation
         </h1>
       </md-toolbar>
-      <md-content ng-controller="RightCtrl" flex layout-padding>
+      <md-content class="cell" ng-controller="RightCtrl" flex layout-padding>
         <div layout="column">
           <md-button ng-click="close(); go('/current')" class="md-primary">
             Queued Up For
