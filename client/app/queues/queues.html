@@ -8,8 +8,8 @@
     <md-list>
       <md-list-item class="md-3-line" ng-repeat="item in class_list">
         <!-- <img ng-src="{{item.face}}" alt="{{item.who}}" class="md-avatar"> -->
-        <div class="md-list-item-text">
-          <h3 ng-click="go('/queues_class')">{{item.what}}</h3>
+        <div class="md-list-item-text" ng-click="go('/queues_class')">
+          <h3>{{item.what}}</h3>
           <!-- <h4>{{item.who}}</h4> -->
           <p>
             {{item.notes}}
