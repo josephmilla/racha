@@ -42,19 +42,40 @@ angular.module('rachaApp')
       });
     };
 
-    var item = {
-      face: '/img/list/60.jpeg',
-      what: 'Brunch this weekend?',
-      who: 'Min Li Chan',
-      notes: "I'll be in your neighborhood doing errands."
-    };
-    $scope.todos = [];
-    for (var i = 0; i < 15; i++) {
-      $scope.todos.push({
-        face: '/img/list/60.jpeg',
-        what: "Brunch this weekend?",
-        who: "Min Li Chan",
-        notes: "I'll be in your neighborhood doing errands."
-      });
-    }
+    var result = $http.get('http://api.randomuser.me/?results=15').
+    success(function(data, status, headers, config) {
+      // this callback will be called asynchronously
+      // when the response is available
+      console.log("GET request success");
+      console.log(data);
+
+
+      // capitalizeFirstLetter
+      String.prototype.capitalizeFirstLetter = function() {
+        return this.charAt(0).toUpperCase() + this.slice(1);
+      }
+
+      // 2 digits
+      function fixNumber(n){
+        return n > 9 ? "" + n: "0" + n;
+      }
+
+      var classes = ['BADM 451', 'BADM 458', 'CS 125', 'CS 173', 'CWL 251', 'ACCY 200', 'ASTR 121', 'BADM 351', 'BUS 101', 'BUS 199', 'BTW 250', 'MATH 220', 'RHET 105', 'SOC 267', 'CS 465']
+
+      $scope.todos = [];
+      for (var i = 0; i < 15; i++) {
+        $scope.todos.push({
+          face: data.results[i].user.picture.thumbnail,
+          what: classes[i],
+          who: data.results[i].user.name.first.capitalizeFirstLetter()  + " " + data.results[i].user.name.last.capitalizeFirstLetter(),
+          notes: Math.floor((Math.random() * 20) + 1) + " minutes, " + Math.floor((Math.random() * 12) + 1) + ":" + fixNumber(Math.floor((Math.random() * 60) + 1)) + " PM"
+        });
+      }
+    }).
+    error(function(data, status, headers, config) {
+      // called asynchronously if an error occurs
+      // or server returns response with an error status.
+      console.log("GET request failure");
+    });
+
   });
