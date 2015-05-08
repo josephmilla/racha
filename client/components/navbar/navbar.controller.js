@@ -47,6 +47,10 @@ angular.module('rachaApp')
       $location.path( path );
     };
 
+    $scope.goBack = function() {
+      window.history.back();
+    };
+
     // alert(window.location.href);
 
     // $scope.currentTitle = '';
@@ -54,6 +58,8 @@ angular.module('rachaApp')
     console.log(currentPage);
     if (currentPage.indexOf('current') > -1) {
       $scope.currentTitle = 'Queued Up For';
+    } else if (currentPage.indexOf('class') > -1) {
+      $scope.currentTitle = 'Class';
     } else if (currentPage.indexOf('queues') > -1) {
       $scope.currentTitle = 'Queues';
     } else if (currentPage.indexOf('grades') > -1) {
