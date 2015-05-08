@@ -46,6 +46,19 @@ angular.module('rachaApp')
     $scope.go = function ( path ) {
       $location.path( path );
     };
+
+    // alert(window.location.href);
+
+    // $scope.currentTitle = '';
+    var currentPage = window.location.href;
+    console.log(currentPage);
+    if (currentPage.indexOf('current') > -1) {
+      $scope.currentTitle = 'Queued Up For';
+    } else if (currentPage.indexOf('queues') > -1) {
+      $scope.currentTitle = 'Queues';
+    } else if (currentPage.indexOf('grades') > -1) {
+      $scope.currentTitle = 'Grades';
+    }
   })
   .controller('LeftCtrl', function ($scope, $timeout, $mdSidenav, $log) {
     $scope.close = function () {

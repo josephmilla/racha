@@ -10,3 +10,8 @@
   color: #E7CAB1;
   border: 10px;
 }*/
+
+.racha-subheader {
+  background: transparent !important;
+  font-weight: bold;
+}
