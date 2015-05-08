@@ -1,6 +1,8 @@
 # Racha
 
-## Intialize MongoDB database
+## Setup 
+
+### Intialize MongoDB database
 ```
 $ cd racha
 $ mkdir data
@@ -9,13 +11,13 @@ $ mkdir db
 $ mongod --dbpath db
 ```
 
-## Download dependencies
+### Download dependencies
 ```
 $ npm install
 $ bower install
 ```
 
-## Build and run server
+### Build and run server
 ```
 $ grunt build
 $ grunt serve
