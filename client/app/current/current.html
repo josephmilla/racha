@@ -2,9 +2,9 @@
 <div ng-controller="CurrentCtrl" layout="column" layout-fill>
   <md-content class="md-hue-1" layout-padding>
     <md-list>
-      <md-list-item class="md-3-line cell" ng-repeat="item in todos" ng-click="callTA()">
-        <img ng-src="{{item.face}}" alt="{{item.who}}" class="md-avatar">
-        <div class="md-list-item-text">
+      <md-list-item class="md-3-line cell" ng-repeat="item in todos">
+        <img ng-src="{{item.face}}" alt="{{item.who}}" class="md-avatar" ng-click="callTA()">
+        <div class="md-list-item-text" ng-click="callTA()">
           <h3>{{item.what}}</h3>
           <h4>{{item.who}}</h4>
           <p>
@@ -12,8 +12,10 @@
           </p>
         </div>
         <span flex></span>
-        <md-button class="md-fab md-mini md-primary" aria-label="Navigation" style="margin-top: 25px;">
+
+        <md-button class="md-fab md-mini md-primary" aria-label="Navigation" style="margin-top: 25px;" ng-click="cancelTA()">
           <md-icon md-svg-icon="md-close"></md-icon>
+          <!-- <span class="glyphicon glyphicon-star-empty"></span> -->
         </md-button>
         <md-divider inset></md-divider>
       </md-list-item>

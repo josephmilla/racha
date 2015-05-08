@@ -49,4 +49,37 @@ angular.module('rachaApp')
     $scope.go = function ( path ) {
       $location.path( path );
     };
+
+    $scope.callTA = function(ev) {
+      // Appending dialog to document.body to cover sidenav in docs app
+      var confirm = $mdDialog.alert()
+        .parent(angular.element(document.body))
+        .title('Teaching Assistant')
+        .content('Join Queue | View Profile | Favorite | Cancel')
+        .ariaLabel('Lucky day')
+        .ok('OK')
+        .targetEvent(ev);
+      $mdDialog.show(confirm).then(function() {
+        $scope.alert = 'You decided to get rid of your debt.';
+      }, function() {
+        $scope.alert = 'You decided to keep your debt.';
+      });
+    };
+
+    $scope.cancelTA = function(ev) {
+      // Appending dialog to document.body to cover sidenav in docs app
+      var confirm = $mdDialog.confirm()
+        .parent(angular.element(document.body))
+        .title('Cancel TA Appointment')
+        .content('Are you sure you want to cancel?')
+        .ariaLabel('Lucky day')
+        .ok('OK')
+        .cancel('Cancel')
+        .targetEvent(ev);
+      $mdDialog.show(confirm).then(function() {
+        $scope.alert = 'You decided to get rid of your debt.';
+      }, function() {
+        $scope.alert = 'You decided to keep your debt.';
+      });
+    };
   });

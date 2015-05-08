@@ -32,7 +32,7 @@ angular.module('rachaApp')
     $scope.alert = '';
     $scope.showConfirm = function(ev) {
       // Appending dialog to document.body to cover sidenav in docs app
-      var confirm = $mdDialog.confirm()
+      var confirm = $mdDialog.alert()
         .parent(angular.element(document.body))
         .title('Forgot your password?')
         .content('Reset it at passwords.cites.illinois.edu')
@@ -47,7 +47,7 @@ angular.module('rachaApp')
     };
     $scope.signUp = function(ev) {
       // Appending dialog to document.body to cover sidenav in docs app
-      var confirm = $mdDialog.confirm()
+      var confirm = $mdDialog.alert()
         .parent(angular.element(document.body))
         .title('Forgot your password?')
         .content('Reset it at passwords.cites.illinois.edu')
