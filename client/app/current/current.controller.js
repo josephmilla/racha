@@ -78,4 +78,20 @@ angular.module('rachaApp')
       console.log("GET request failure");
     });
 
+    $scope.callTA = function(ev) {
+      // Appending dialog to document.body to cover sidenav in docs app
+      var confirm = $mdDialog.confirm()
+        .parent(angular.element(document.body))
+        .title('Contact TA')
+        .content('Join Queue | View Profile | Favorite')
+        .ariaLabel('Lucky day')
+        .ok('OK')
+        .targetEvent(ev);
+      $mdDialog.show(confirm).then(function() {
+        $scope.alert = 'You decided to get rid of your debt.';
+      }, function() {
+        $scope.alert = 'You decided to keep your debt.';
+      });
+    };
+
   });

@@ -2,7 +2,7 @@
 <div ng-controller="CurrentCtrl" layout="column" layout-fill>
   <md-content class="md-hue-1" layout-padding>
     <md-list>
-      <md-list-item class="md-3-line cell" ng-repeat="item in todos">
+      <md-list-item class="md-3-line cell" ng-repeat="item in todos" ng-click="callTA()">
         <img ng-src="{{item.face}}" alt="{{item.who}}" class="md-avatar">
         <div class="md-list-item-text">
           <h3>{{item.what}}</h3>
