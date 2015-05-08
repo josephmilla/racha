@@ -21,7 +21,7 @@ $ bower install
 ```
 $ grunt build
 $ grunt serve
---> Default: locahost:9000
+/* Default: locahost:9000 */
 ```
 
 © 2015 Joseph Milla
