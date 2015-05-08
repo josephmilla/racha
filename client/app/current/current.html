@@ -2,7 +2,7 @@
 <div ng-controller="CurrentCtrl" layout="column" layout-fill>
   <md-content class="md-hue-1" layout-padding>
     <!-- <h2>Queued up for:</h2> -->
-    <div layout="row" flex>
+    <!-- <div layout="row" flex>
       <md-subheader class="md-primary racha-subheader">
         <h4>QUEUED UP FOR</h4>
       </md-subheader>
@@ -10,7 +10,7 @@
       <md-button class="md-fab md-mini md-primary" aria-label="Navigation" ng-click="getLocation()" style="margin-top: 15px;">
         <span class="glyphicon glyphicon-map-marker"></span>
       </md-button>
-    </div>
+    </div> -->
     <md-list>
       <md-list-item class="md-3-line cell" ng-repeat="item in todos">
         <img ng-src="{{item.face}}" alt="{{item.who}}" class="md-avatar">

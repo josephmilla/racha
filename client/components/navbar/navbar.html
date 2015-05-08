@@ -36,6 +36,9 @@
         <span><strong>{{ currentTitle }}</strong></span>
       </h2>
       <span flex></span>
+      <md-button class="md-icon-button" aria-label="Navigation" ng-click="getLocation()" ng-if="currentTitle === 'Queued Up For'">
+        <span class="glyphicon glyphicon-map-marker"></span>
+      </md-button>
       <md-button class="md-icon-button" aria-label="Navigation" ng-click="toggleRight()">
         <span class="glyphicon glyphicon-menu-hamburger"></span>
       </md-button>
