@@ -31,20 +31,18 @@
     <div class="md-toolbar-tools">
       <span flex></span>
       <md-button class="md-icon-button" aria-label="Navigation" ng-click="showConfirm($event)">
-        <span class="glyphicon glyphicon-question-sign"></span>
+        <span class="glyphicon glyphicon-question-sign md-primary"></span>
       </md-button>
     </div>
   </md-toolbar>
-  <div class="mycolor1" layout="row" layout-align="center center">
-    <md-content class="md-hue-1" layout-padding flex="33" flex-sm="100">
-      <section class="mycolor1" layout="column" layout-align="center center" flex>
+  <div layout="row" layout-align="center center">
+    <md-content layout-padding flex="33" flex-sm="100" class="login-box">
+      <br>
+      <section layout="column" layout-align="center center" flex>
         <h1>Racha</h1>
+      </section>
       <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+      <section flex>
         <md-input-container>
           <!-- Use floating label instead of placeholder -->
           <label>NetID</label>
@@ -57,9 +55,9 @@
         </md-input-container>
       </section>
 
-      <section class="mycolor1" layout="row" layout-sm="row" layout-align="center center">
+      <section layout="row" layout-sm="row" layout-align="center center">
         <!-- <md-button class="md-raised md-primary" ng-click="signUp($event)">Sign up</md-button> -->
-        <md-button class="md-raised md-primary mycolor1" ng-style="{'background-color':#E7CAB1}" ng-click="go('/current') ">Login</md-button>
+        <md-button class="md-raised md-primary" ng-click="go('/current')">Login</md-button>
       </section>
     </md-content>
   </div>

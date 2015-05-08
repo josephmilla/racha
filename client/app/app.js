@@ -9,7 +9,7 @@ angular.module('rachaApp', [
   'ui.bootstrap',
   'ngMaterial'
 ])
-  .config(function ($routeProvider, $locationProvider, $httpProvider) {
+  .config(function ($routeProvider, $locationProvider, $httpProvider, $mdThemingProvider) {
     $routeProvider
       .otherwise({
         redirectTo: '/'
@@ -17,6 +17,53 @@ angular.module('rachaApp', [
 
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
+    $mdThemingProvider.definePalette('palette1', {
+    '50': 'E7CAB1',
+    '100': 'E7CAB1',
+    '200': 'E7CAB1',
+    '300': 'E7CAB1',
+    '400': 'E7CAB1',
+    '500': 'E7CAB1',
+    '600': 'E7CAB1',
+    '700': 'E7CAB1',
+    '800': 'E7CAB1',
+    '900': 'E7CAB1',
+    'A100': 'E7CAB1',
+    'A200': 'E7CAB1',
+    'A400': 'E7CAB1',
+    'A700': 'E7CAB1',
+    'contrastDefaultColor': 'light',    // whether, by default, text (contrast)
+                                        // on this palette should be dark or light
+    'contrastDarkColors': ['50', '100', //hues which contrast should be 'dark' by default
+     '200', '300', '400', 'A100'],
+    'contrastLightColors': undefined    // could also specify this if default was 'dark'
+    });
+
+    $mdThemingProvider.definePalette('palette2', {
+    '50': 'E3B38A',
+    '100': 'E3B38A',
+    '200': 'E3B38A',
+    '300': 'E3B38A',
+    '400': 'E3B38A',
+    '500': 'E3B38A',
+    '600': 'E3B38A',
+    '700': 'E3B38A',
+    '800': 'E3B38A',
+    '900': 'E3B38A',
+    'A100': 'E3B38A',
+    'A200': 'E3B38A',
+    'A400': 'E3B38A',
+    'A700': 'E3B38A',
+    'contrastDefaultColor': 'light',    // whether, by default, text (contrast)
+                                        // on this palette should be dark or light
+    'contrastDarkColors': ['50', '100', //hues which contrast should be 'dark' by default
+     '200', '300', '400', 'A100'],
+    'contrastLightColors': undefined    // could also specify this if default was 'dark'
+    });
+
+    $mdThemingProvider.theme('default')
+      .primaryPalette('palette2')
+      .accentPalette('palette1');
   })
 
   .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {

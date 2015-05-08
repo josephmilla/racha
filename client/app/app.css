@@ -47,3 +47,17 @@
   vertical-align: middle;
   horizontal-align: middle;
 }
+
+body {
+  background-color: #E7CAB1;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+.md-toolbar-tools {
+  background-color: #E7CAB1;
+}

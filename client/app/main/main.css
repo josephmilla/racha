@@ -37,29 +37,29 @@
   border: 1px solid #ddd;
 }
 
-c {
+/*c {
   background-color: #E7CAB1;
   color: #E7CAB1;
   border: none;
-}
+}*/
 
-
+/*
 h1 {
-    font-size: 60px;
-    font-weight: bold;
-    color: #FFFFFF;
+  font-size: 60px;
+  font-weight: bold;
+  color: #FFFFFF;
 }
 
 h4 {
-    font-size: 15px;
-    color: #FFFFFF;
+  font-size: 15px;
+  color: #FFFFFF;
 }
 
 
 label {
-    font-size: 1px;
-    font-weight: bold;
-    color: #FFFFFF;
+  font-size: 1px;
+  font-weight: bold;
+  color: #FFFFFF;
 }
 
 div {
@@ -68,16 +68,22 @@ div {
 
 
 .cell {
-  border: #E3B38A 1.5px solid;  
+  border: #E3B38A 1.5px solid;
   background-color: #E7CAB1;
   color: #FFFFFF;
 }
 
 
 .mycolor1 {
-  outline-color: #E7CAB1; 
+  outline-color: #E7CAB1;
   background-color: #E7CAB1;
-  border-color: #E7CAB1;   
+  border-color: #E7CAB1;
+}*/
+
+.login-box {
+  background-color: #E7CAB1 !important;
 }
 
-
+/*.md-input-focused {
+  border-color: #FFFFFF !important;
+}*/
