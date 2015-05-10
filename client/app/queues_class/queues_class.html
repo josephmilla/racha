@@ -3,15 +3,15 @@
   <md-content class="md-hue-1" layout-padding>
     <md-list>
       <md-list-item class="md-3-line cell" ng-repeat="item in todos">
-        <img ng-src="{{item.face}}" alt="{{item.who}}" class="md-avatar" ng-click="callTA()">
-        <div class="md-list-item-text" ng-click="callTA()">
+        <img ng-src="{{item.face}}" alt="{{item.who}}" class="md-avatar" ng-click="callTA(item.user)">
+        <div class="md-list-item-text" ng-click="callTA(item.user)">
           <h3>{{item.who}}</h3>
           <p>
             {{item.notes}}
           </p>
         </div>
         <span flex></span>
-        <md-button class="md-fab md-mini md-primary" aria-label="Navigation" style="margin-top: 15px;" ng-click="cancelTA()">
+        <md-button class="md-fab md-mini md-primary" aria-label="Navigation" style="margin-top: 15px;" ng-click="cancelTA(todos, $index)">
           <md-icon md-svg-icon="md-close"></md-icon>
         </md-button>
         <md-divider inset></md-divider>

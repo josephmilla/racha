@@ -3,7 +3,7 @@
   <md-content class="md-hue-1" layout-padding>
     <md-list>
       <md-list-item class="md-3-line cell" ng-repeat="item in todos">
-        <img ng-src="{{item.face}}" alt="{{item.who}}" class="md-avatar" ng-click="callTA()">
+        <img ng-src="{{item.face}}" alt="{{item.who}}" class="md-avatar" ng-click="callTA(item.user)">
         <div class="md-list-item-text" ng-click="callTA(item.user)">
           <h3>{{item.what}}</h3>
           <h4>{{item.who}}</h4>
