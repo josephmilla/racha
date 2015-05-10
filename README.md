@@ -1,7 +1,7 @@
 # Racha
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=tbTbYRefGWc" target="_blank"><img src="https://raw.githubusercontent.com/josephmilla/racha/master/racha.png" 
-alt="IMAGE ALT TEXT HERE" width="100%" height="450" border="10" /></a>
+alt="IMAGE ALT TEXT HERE" width="100%" height="100%" border="10" /></a>
 
 ## Setup 
 
