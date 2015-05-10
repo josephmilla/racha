@@ -33,21 +33,21 @@ angular.module('rachaApp')
     });
 
     $scope.alert = '';
-    $scope.getLocation = function(ev) {
-      // Appending dialog to document.body to cover sidenav in docs app
-      var confirm = $mdDialog.alert()
-        .parent(angular.element(document.body))
-        .title('Enter Location')
-        .content('Location:')
-        .ariaLabel('Lucky day')
-        .ok('OK')
-        .targetEvent(ev);
-      $mdDialog.show(confirm).then(function() {
-        $scope.alert = 'You decided to get rid of your debt.';
-      }, function() {
-        $scope.alert = 'You decided to keep your debt.';
-      });
-    };
+    // $scope.getLocation = function(ev) {
+    //   // Appending dialog to document.body to cover sidenav in docs app
+    //   var confirm = $mdDialog.alert()
+    //     .parent(angular.element(document.body))
+    //     .title('Enter Location')
+    //     .content('Location:')
+    //     .ariaLabel('Lucky day')
+    //     .ok('OK')
+    //     .targetEvent(ev);
+    //   $mdDialog.show(confirm).then(function() {
+    //     $scope.alert = 'You decided to get rid of your debt.';
+    //   }, function() {
+    //     $scope.alert = 'You decided to keep your debt.';
+    //   });
+    // };
 
     var result = $http.get('http://api.randomuser.me/?results=15').
     success(function(data, status, headers, config) {

@@ -26,21 +26,21 @@ angular.module('rachaApp')
     });
 
     $scope.alert = '';
-    $scope.getLocation = function(ev) {
-      // Appending dialog to document.body to cover sidenav in docs app
-      var confirm = $mdDialog.alert()
-        .parent(angular.element(document.body))
-        .title('Enter Location')
-        .content('Location:')
-        .ariaLabel('Lucky day')
-        .ok('OK')
-        .targetEvent(ev);
-      $mdDialog.show(confirm).then(function() {
-        $scope.alert = 'You decided to get rid of your debt.';
-      }, function() {
-        $scope.alert = 'You decided to keep your debt.';
-      });
-    };
+    // $scope.getLocation = function(ev) {
+    //   // Appending dialog to document.body to cover sidenav in docs app
+    //   var confirm = $mdDialog.alert()
+    //     .parent(angular.element(document.body))
+    //     .title('Enter Location')
+    //     .content('Location:')
+    //     .ariaLabel('Lucky day')
+    //     .ok('OK')
+    //     .targetEvent(ev);
+    //   $mdDialog.show(confirm).then(function() {
+    //     $scope.alert = 'You decided to get rid of your debt.';
+    //   }, function() {
+    //     $scope.alert = 'You decided to keep your debt.';
+    //   });
+    // };
 
     var result = $http.get('http://api.randomuser.me/?results=15').
     success(function(data, status, headers, config) {
@@ -109,6 +109,73 @@ angular.module('rachaApp')
       }, function() {
         $scope.alert = 'You decided to keep your debt.';
       });
+    };
+
+    $scope.showAlert = function(ev) {
+      // Appending dialog to document.body to cover sidenav in docs app
+      // Modal dialogs should fully cover application
+      // to prevent interaction outside of dialog
+      $mdDialog.show(
+        $mdDialog.alert()
+          .parent(angular.element(document.body))
+          .title('This is an alert title')
+          .content('You can specify some description text in here.')
+          .ariaLabel('Alert Dialog Demo')
+          .ok('Got it!')
+          .targetEvent(ev)
+      );
+    };
+
+    $scope.showConfirm = function(ev) {
+      // Appending dialog to document.body to cover sidenav in docs app
+      var confirm = $mdDialog.confirm()
+        .parent(angular.element(document.body))
+        .title('Would you like to delete your debt?')
+        .content('All of the banks have agreed to forgive you your debts.')
+        .ariaLabel('Lucky day')
+        .ok('Please do it!')
+        .cancel('Sounds like a scam')
+        .targetEvent(ev);
+      $mdDialog.show(confirm).then(function() {
+        $scope.alert = 'You decided to get rid of your debt.';
+      }, function() {
+        $scope.alert = 'You decided to keep your debt.';
+      });
+    };
+
+    $scope.getLocation = function(ev) {
+      $mdDialog.show({
+        controller: DialogController,
+        // templateUrl: 'dialog1.tmpl.html',
+        template:
+        '<md-dialog aria-label="List dialog" class="md-primary">' +
+           '  <md-dialog-content layout-padding>'+
+                '<br>'+
+                '<md-input-container>'+
+                 '<input ng-model="user.location" type="email" placeholder="Enter your location" ng-required="true" class="md-primary" style="float: left;">'+
+                '</md-input-container>'+
+           '  </md-dialog-content>' +
+           '  <div class="md-actions">' +
+           '    <md-button ng-click="cancelDialog()" class="md-primary">' +
+           '      Cancel' +
+           '    </md-button>' +
+           '    <md-button ng-click="closeDialog()" class="md-primary">' +
+           '      Go' +
+           '    </md-button>' +
+           '  </div>' +
+           '</md-dialog>',
+        targetEvent: ev
+      });
+
+      function DialogController($scope, $mdDialog) {
+        $scope.cancelDialog = function() {
+          $mdDialog.hide();
+        }
+        $scope.closeDialog = function() {
+          $mdDialog.hide();
+          $scope.currentLocation = user.location;
+        }
+      }
     };
 
   });
