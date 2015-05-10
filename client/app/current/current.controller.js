@@ -110,7 +110,7 @@ angular.module('rachaApp')
         '<md-dialog aria-label="List dialog" class="md-primary" layout-padding>' +
            '  <md-dialog-content layout-padding>'+
                 '<h4>Teaching Assistant</h4>'+
-                '<span><span ng-click="joinQueue()" style="color: #337ab7;">Join Queue</span> | <span ng-click="viewProfile()" style="color: #337ab7;">View Profile</span> | <span ng-click="favorite()" style="color: #337ab7;">Favorite</span>'+
+                '<span><span ng-click="viewProfile()" style="color: #337ab7;">View Profile</span> | <span ng-click="favorite()" style="color: #337ab7;">Favorite</span>'+
            '  </md-dialog-content>' +
            '  <div class="md-actions">' +
            '    <md-button ng-click="cancelDialog()" class="md-primary">' +
