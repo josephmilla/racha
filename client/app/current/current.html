@@ -4,7 +4,7 @@
     <md-list>
       <md-list-item class="md-3-line cell" ng-repeat="item in todos">
         <img ng-src="{{item.face}}" alt="{{item.who}}" class="md-avatar" ng-click="callTA()">
-        <div class="md-list-item-text" ng-click="callTA()">
+        <div class="md-list-item-text" ng-click="callTA(item.user)">
           <h3>{{item.what}}</h3>
           <h4>{{item.who}}</h4>
           <p>
@@ -13,7 +13,7 @@
         </div>
         <span flex></span>
 
-        <md-button class="md-fab md-mini md-primary" aria-label="Navigation" style="margin-top: 25px;" ng-click="cancelTA()">
+        <md-button class="md-fab md-mini md-primary" aria-label="Navigation" style="margin-top: 25px;" ng-click="cancelTA(todos, $index)">
           <md-icon md-svg-icon="md-close"></md-icon>
           <!-- <span class="glyphicon glyphicon-star-empty"></span> -->
         </md-button>
